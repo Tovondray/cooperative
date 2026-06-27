@@ -1,0 +1,30 @@
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environnements virtuels
+venv/
+.venv/
+env/
+
+# Base SQLite
+db.sqlite3
+
+# Fichiers de logs
+*.log
+
+# Variables d'environnement
+.env
+
+# Dossiers de médias et fichiers statiques générés
+media/
+staticfiles/
+
+# Fichiers de configuration d'éditeur
+.vscode/
+.idea/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
