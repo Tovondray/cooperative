@@ -11,12 +11,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(145deg, #0a0e1a 0%, #1a2a3a 100%);
     padding: 20px;
     position: relative;
+    background: #0a0e1a; /* couleur de secours */
 }
 
-/* Effet de grille subtil (cyan) */
+/* ===== FOND FLUO AVEC IMAGE ===== */
 body::before {
     content: '';
     position: fixed;
@@ -24,12 +24,26 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 0;
+    background: url("../images/taxibrousse.png") center/cover no-repeat;
+    filter: blur(8px) brightness(0.5);
+    transform: scale(1.05);
+}
+
+/* Grille subtile (cyan) par‑dessus */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
     background-image: 
         linear-gradient(rgba(0, 180, 216, 0.04) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 180, 216, 0.04) 1px, transparent 1px);
     background-size: 40px 40px;
     pointer-events: none;
-    z-index: 0;
 }
 
 /* ===== CONTAINER ===== */
@@ -131,9 +145,11 @@ select:focus {
     background: rgba(0, 30, 40, 0.8);
 }
 
+/* ===== TEXTAREA ===== */
 textarea {
     resize: vertical;
-    min-height: 80px;
+    min-height: 60px;   /* ← réduit de 80px à 60px */
+    max-height: 150px;
 }
 
 /* ===== RADIO BUTTONS ===== */
@@ -232,7 +248,7 @@ textarea {
     transform: translateY(0);
 }
 
-/* Effet ripple (ondulation) */
+/* Effet ripple */
 .btn-primary::after {
     content: '';
     position: absolute;
@@ -327,7 +343,7 @@ textarea {
     }
 }
 
-/* ===== SCROLLBAR (optionnel) ===== */
+/* ===== SCROLLBAR ===== */
 ::-webkit-scrollbar {
     width: 6px;
 }
