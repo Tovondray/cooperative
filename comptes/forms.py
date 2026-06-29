@@ -53,4 +53,27 @@ class CustomUserCreationForm(UserCreationForm):
                     email=self.cleaned_data['email_cooperative'],
                     est_validee=False
                 )
-        return user
+        return use
+
+
+
+
+
+
+class LoginForm(forms.Form):
+
+    username = forms.CharField(
+        max_length=150,
+        widget=forms.TextInput(attrs={
+            "placeholder": "Entrez votre nom",
+            "class": "form-control"
+        })
+    )
+
+    password = forms.CharField(
+        widget=forms.PasswordInput(attrs={
+            "placeholder": "••••••••",
+            "class": "form-control",
+            "id": "id_password"
+        })
+    )
